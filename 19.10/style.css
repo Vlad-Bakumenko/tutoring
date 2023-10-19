@@ -10,12 +10,14 @@
     font-size: 62.5%;
 }
 
-body {
+/* Flex approach */
+
+/* body {
     font-size: 1.6rem;
     font-family: "Montserrat", sans-serif;
 }
 
-/* Flex approach */
+
 
 header {
     display: flex;
@@ -93,21 +95,22 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 3rem;
+    gap: 4rem;
     border: 1px solid lightgray;
     background-color: rgb(241, 241, 241);
     margin-top: 6rem;
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 3rem;
     letter-spacing: .1rem;
 }
 
 .flex2 > section > div {
-    flex: 1 1 33%;
+    flex: 1 1 30%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     gap: 2rem;
     font-size: 1.7rem;
+    text-align: justify;
 }
 
 div > button {
@@ -162,4 +165,75 @@ footer p {
     color: #434344;
     font-size: 12px;
     padding: 10px;
+} */
+
+/* Grid approach */
+
+body {
+    font-size: 1.6rem;
+    font-family: "Montserrat", sans-serif;
+    
 }
+/* 
+.project {
+    display: grid;
+    grid-template: 10rem 1fr 10rem / repeat(3, 1fr);
+    grid-template-areas: "head head head"
+                         "main main main"
+                         "foot foot foot";
+} */
+
+/* header {
+    grid-area: head;
+    display: grid;
+    grid-template: 1fr / 10vw 1fr 10vw;
+}  */
+
+main {
+    display: grid;
+    /* grid-template-columns: 35% 5% 12% 18% 30%;
+    grid-template-rows: 35% 5% 5% 10% 22.5% 22.5%; */
+    grid-template-areas: "heroi heroi topicr topicr topicr"
+                         "heroi heroi . . ."
+                         "sidel sidel . . ."
+                         "sidel sidel articler articler articler"
+                         "gal gal gal gal sider"
+                         "gal gal . . ." ;
+    margin: 0 auto;
+}
+    
+
+
+
+/* footer {
+    grid-area: foot;
+} */
+
+/* .gallery > img {
+    width: 30rem;
+} */
+
+.hero {
+    grid-area: heroi;
+}
+
+.topic1 {
+    grid-area: topicr;
+}
+
+main > aside:nth-child(3) {
+    grid-area: sidel;
+}
+
+main > section:nth-child(4) {
+    grid-area: articler;
+}
+
+.gallery {
+    grid-area: gal;
+}
+
+main > aside:last-child {
+    grid-area: sider;
+}
+
