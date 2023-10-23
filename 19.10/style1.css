@@ -2,15 +2,13 @@
 
 * {
     box-sizing: border-box;
-    margin: 0;
     padding: 0;
+    margin: 0;
 }
 
 :root {
     font-size: 62.5%;
 }
-
-/* Flex approach */
 
 body {
     font-size: 1.6rem;
@@ -18,12 +16,12 @@ body {
 }
 
 header {
+    height: 8vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid aqua;
     padding: 1rem 3rem;
-    height: 10vh;
-    border: solid 2px aqua;
 }
 
 nav {
@@ -39,35 +37,37 @@ header > div {
     padding: 1rem 3rem;
 }
 
-main {
+.part1 {
+    display: grid;
+    grid-template: 35rem 10rem 25rem / 2fr 3fr;
+    grid-template-areas: "hero topicr"
+                         "asidel . "
+                         "asidel topicrd";
+    gap: 1rem;
     padding: 1rem 3rem;
 }
 
-.flex1 {
-    display: flex;
-    gap: 1.5rem;
-}
-
-.flex1 > section {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    font-size: 2rem;
+.part1 > div:first-child {
+    grid-area: hero;
+    background-image: url(./images/combined-layout-hero-1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 h1 {
     font-size: 5rem;
 }
 
-.flex2 {
+.topic1 {
+    grid-area: topicr;
     display: flex;
-    height: 30rem;
-    margin-top: 1rem;
+    flex-direction: column;
     gap: 1rem;
+    font-size: 2rem;
 }
 
-.flex2 > aside {
-    width: 28%;
+.side1 {
+    grid-area: asidel;
     border-top: purple 2px solid;
     padding: 2rem;
     display: flex;
@@ -75,40 +75,30 @@ h1 {
     justify-content: center;
     gap: 2rem;
     background-color: rgb(241, 241, 241);
-    margin-bottom: 4rem;
 }
 
-
-.flex2 > aside > ul {
+.side1 li {
+    margin-bottom: 1rem;
     list-style-type: none;  
 }
 
-.flex2 > aside > ul > li {
-    margin-bottom: 1rem;
-}
-
-.flex2 > section {
-    width: 69%;
-    height: 20rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 4rem;
+.topic2 {
+    grid-area: topicrd;
+    display: grid;
+    grid-template: 1fr / repeat(3, 1fr);
     border: 1px solid lightgray;
     background-color: rgb(241, 241, 241);
-    margin-top: 6rem;
-    padding: 1.5rem 3rem;
-    letter-spacing: .1rem;
 }
 
-.flex2 > section > div {
-    flex: 1 1 30%;
+.topic2 > div {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: .5rem;
     font-size: 1.7rem;
-    text-align: justify;
+    justify-content: space-around;
+    padding: 2rem 3rem;
+    letter-spacing: .1rem;
 }
 
 div > button {
@@ -119,13 +109,19 @@ div > button {
     background-color: white;
 }
 
-.flex3 {
-    display: flex;
-    gap: 2rem;
+.part2 {
+    display: grid;
+    grid-template-rows: repeat(2, 30rem);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "gallery gallery raside"
+                         "gallery gallery raside";
+    gap: 1rem;
+    margin-top: 1rem;
+    padding: 1rem 3rem;                     
 }
 
 .gallery {
-    width: 70%;
+    grid-area: gallery;
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
@@ -135,16 +131,17 @@ div > button {
     width: 23%;
 }
 
-.flex3 > aside {
-    width: 30%;
+.side2 {
+    grid-area: raside;
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
-.flex3 > aside > h2 {
+.side2 > h2 {
     border-bottom: 1px solid lightgray;
     padding: .5rem;
+    font-size: 3rem;
 }
 
 footer {
