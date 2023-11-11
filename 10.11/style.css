@@ -1,0 +1,192 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #fff;
+    background: #000;
+  }
+
+section {
+    text-align: center;
+    padding: 4rem 0; 
+}
+
+.container {
+    max-width: 114rem;
+    margin: 0 auto;
+    display: flex;
+    gap: 6rem;
+}
+
+.card {
+    flex: 33%;
+    height: 52rem;
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+    position: relative;
+    perspective: 150rem;
+}
+
+.card_side {
+    height: 52rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 3px;
+    backface-visibility: hidden;
+    transition: all 0.8s ease;
+}
+
+.front-1 {
+    background: linear-gradient(-45deg, #f403d1, #64b5f6);
+}
+
+.front-2 {
+    background: linear-gradient(-45deg, #f321d7, #ffec61);
+}
+
+.front-3 {
+    background: linear-gradient(-45deg, #24ff72, #9a4eff);
+}
+
+.back-1 {
+    background: linear-gradient(-45deg, #64b5f6, #f403d1);
+}
+
+.back-2 {
+    background: linear-gradient(-45deg, #ffec61, #f321d7);
+}
+
+.back-3 {
+    background: linear-gradient(-45deg, #9a4eff, #24ff72);
+}
+
+.card:hover .front-1,
+.card:hover .front-2,
+.card:hover .front-3 {
+    transform: rotateY(-180deg);
+}
+
+.back-1,
+.back-2,
+.back-3 {
+    transform: rotateY(180deg);
+}
+
+.card:hover .back-1,
+.card:hover .back-2,
+.card:hover .back-3 {
+    transform: rotateY(0);
+}
+
+.card_title .fas {
+    font-size: 5rem;
+}
+
+.card__heading {
+    font-size: 4rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: center;
+    width: 75%;
+}
+
+.card_details ul {
+    list-style-type: none;
+    width: 80%;
+    margin: 0 auto;
+}
+
+ul > li {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+li:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+
+.card_desc {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+}
+
+.price-box {
+    margin-bottom: 8rem;
+}
+
+.price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+}
+
+.price-value {
+    font-size: 6rem;
+    font-weight: 100;
+}
+
+.card_title {
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    border-radius: 0.5rem;
+    font-size: 1.6rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.btn:active,
+.btn:focus {
+    outline: none;
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.back {
+    background-color: #fff;
+    color: #777;
+}
+
+.down {
+    background: linear-gradient(to right, #fc466b, #3f5efb);
+    color: #fff;
+}
