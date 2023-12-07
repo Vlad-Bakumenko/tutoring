@@ -1,0 +1,122 @@
+$ruler: 16px;
+$color-red: #AE1100;
+$color-bg: #EBECF0;
+$color-shadow: #BABECC;
+$color-white: #FFF;
+
+body, html {
+  background-color:$color-bg;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: -0.2px;
+  font-size: $ruler;
+}
+
+form {
+  padding: $ruler;
+  width: $ruler*20;
+  margin: 0 auto;
+}
+
+div {
+	color: $color-shadow;
+	text-shadow: 1px 1px 1px $color-white;
+  //   offset-x | offset-y | blur-radius | color
+  }
+  
+
+.segment {
+  padding: $ruler*2 0;
+  text-align: center;
+  &.two {
+	display:flex;
+    justify-content: center;
+    align-items:center;
+  }
+}
+
+button, input {
+  border: 0;
+  outline: 0;
+//   Assigning outline a value of 0 or none will remove the browser's default focus style
+  font-size: $ruler;
+  border-radius: $ruler*20;
+  padding: $ruler;
+  background-color:$color-bg;
+  text-shadow: 1px 1px 0 $color-white;
+}
+
+label {
+  margin-bottom: $ruler*1.5;
+  width: 100%;
+}
+
+input {
+  margin-right: $ruler/2;
+  margin-bottom: $ruler;
+  box-shadow:  inset 2px 2px 5px $color-shadow, inset -5px -5px 10px $color-white;
+//   Inset - Changes the shadow from an outer box-shadow to an inner box-shadow
+  //   If only two values are given, they are interpreted as <offset-x> and <offset-y> values.
+  // If a third value is given, it is interpreted as a <blur-radius>.
+ // If a fourth value is given, it is interpreted as a <spread-radius>.
+ // Positive values - right and bottom, negative - left and top
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+  //   Apply to all changed properties
+
+  &:focus {
+    box-shadow:  inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
+  }
+}
+
+button {
+  color:#61677C;
+  box-shadow: -5px -5px 20px $color-white,  5px 5px 20px $color-shadow;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  
+  &:hover {
+    box-shadow: -2px -2px 5px $color-white, 2px 2px 5px $color-shadow;
+  }
+  
+  &:active {
+    box-shadow: inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
+  }
+  
+  .fa-solid {
+    margin-right: $ruler/2;
+  }
+  
+  &.unit {
+    border-radius: $ruler/2;
+    width: $ruler*3;
+    height: $ruler*3;
+    margin: 0 $ruler/2;
+    font-size: $ruler*1.2;
+    
+    .fa-solid {
+      margin-right: 0; 
+    }
+  }
+  
+  &.red {
+    width: 100%;
+    color:$color-red;
+  }
+}
+
+.input-group {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  
+  label {
+    margin: 0;
+    flex: 1;
+  }
+}
