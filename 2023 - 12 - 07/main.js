@@ -192,10 +192,55 @@ for (let shark of sharks) {
 }
 
 
-//? Task to practice : Title Case Converter
+//? map() - array method
+
+// The map() method of Array instances creates a new array populated with the results of calling a provided function on every element in the calling array.
+
+const array1 = [1,4,9,16];
+
+//New Array   
+//   |   Declared Array
+//   |         |     New element of New Array
+//   |         |         |   How to modify new element in New Array in relation to element in Declared Array
+//   |         |         |      |
+const map1 = array1.map((x) => x*2);
+
+console.log(map1);
+
+//? Task 1: Title Case Converter
 //Scenario:
 //You're working on a text utility and need to convert a string to title case (capitalize the first letter of each word). Create a function //convertToTitleCase that takes a string as input and returns the string in title case.
 
 
+function convertToTitleCase(string) {
+    // return string.toLowerCase().split(" ").map(word => word[0].toUpperCase() + word.slice(1)).join(" ");
+    let newArray = string.toLowerCase().split(" ") // Declare an array which is input transformed to lower case and into array
+    console.log(newArray);
+    let transformedArray = newArray.map(word => word[0].toUpperCase() + word.slice(1)) // Declare new array which has transformed elements in relation to newArray
+    console.log(transformedArray);
+    let newStr = transformedArray.join(" "); // Convert transformedArray into string
+    return newStr // return string
+}
+
+
 const sentence = 'this is a title case example';
 console.log(convertToTitleCase(sentence)); // Output: "This Is A Title Case Example"
+
+//? Task 2: Calculate Factorial with Default Parameter
+
+//Scenario:
+//You need to calculate the factorial of a number using a recursive function with a default parameter. Create a function calculateFactorial //that takes a number as input and calculates its factorial using recursion. If no number is provided, assume the factorial is 1. 
+// Example of factorial  6! = 1x2x3x4x5x6
+
+  // Test
+console.log(calculateFactorial(5)); // Output: 120 (5 * 4 * 3 * 2 * 1)
+console.log(calculateFactorial()); // Output: 1 (default parameter)
+
+//? Task 3: Generate Random Password with Rest Parameter
+
+// Scenario:
+// You're building a password generator that takes different parameters to generate a password. Create a function generateRandomPassword that // generates a random password with a specified length. It should also allow including optional special characters.
+
+  // Test
+console.log(generateRandomPassword(8)); // Output: Random password of length 8
+console.log(generateRandomPassword(10, '@$#')); // Output: Random password of length 10 with special characters
