@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <body>
+      <div class="container">
+        <!-- EventHandler property -->
+        <input
+          id="html-btn1"
+          type="button"
+          value="triggered from HTML"
+          onclick=clickMe()
+        />
+        <input id="dom-btn1" type="button" value="triggered from DOM" />
+
+        <!-- eventListener -->
+        <input
+          id="dom-btn2"
+          type="button"
+          value="triggered from DOM eventListener"
+        />
+      </div>
+      <div class="container">
+        <form id="form">
+          <label for="username"
+            >name: <input type="text" name="username" id="username" required
+          /></label>
+          <p class="username-text">here</p>
+          <br />
+          <label for="password"
+            >booking: <input type="text" name="booking" id="booking" required
+          /></label>
+          <p class="booking-text"></p>
+          <br />
+          <input type="submit" value="submit" />
+        </form>
+        <div class="output"></div>
+      </div>
+    </body>
+    <script src="index.js"></script>
+  </body>
+</html>
