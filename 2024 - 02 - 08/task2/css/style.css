@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: lightsteelblue;
+}
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    flex-direction: column;
+    gap:2rem;
+}
+
+input {
+    width: 40rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+button[type = "submit"] {
+    height: 3rem;
+    width: 8rem;
+    border-radius: 10px;
+    border: none;
+    background-color: springgreen;
+    color: white;
+    font-size: 1rem;
+    box-shadow: 3px 3px 4px black, -1px -1px 3px black; 
+    vertical-align: bottom;
+}
+
+div {
+    background-color: white;
+    width: 48rem;
+    height: 3rem;
+    border-radius: 1rem;
+    justify-content: end;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+div > button {
+    background-color: white;
+    border: none;
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+div > button:nth-child(2):hover {
+    color: springgreen;
+}
+
+div > button:nth-child(3):hover {
+    color: red;
+}
+
+div > p {
+    margin-right: 18rem;
+    font-size: 2rem;
+}
+
+dialog {
+    width: 10rem;
+    height: 2rem;
+}
