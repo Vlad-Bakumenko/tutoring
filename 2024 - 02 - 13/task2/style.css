@@ -1,0 +1,19 @@
+ul,li { all:unset; }
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+li {
+    flex-grow: 1;
+    margin: .3em .3em 0 0;
+    padding: .3em;
+    text-align: center;
+    border: 1px solid #aaa;
+    border-radius: .3em;
+}
+
+.none {
+    display: none;
+}
