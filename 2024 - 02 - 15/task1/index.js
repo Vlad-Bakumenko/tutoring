@@ -6,14 +6,29 @@ document.body.append(outputDiv);
 
 const imgArr = [];
 
-// 1. Write an async function fetchData()
+// 1 STEP : Write an async function fetchData()
 // accepts a username as an argument (this will be submitted by user later in the form)
 
 // fetches the user profile from githubAPI
 
 // the actual API from the documentation: https://api.github.com/users/[USERNAME])
 
-// Basic example from before
+//? An async function declaration creates an AsyncFunction object. Each time when an async function is called, it returns a new Promise.
+
+// Async functions can contain zero or more await expressions. Await expressions make promise-returning functions behave as though they're synchronous by suspending execution until the returned promise is fulfilled or rejected. The resolved value of the promise is treated as the return value of the await expression. Use of async and await enables the use of ordinary try / catch blocks around asynchronous code.
+
+// The await keyword is only valid inside async functions within regular JavaScript code. If you use it outside of an async function's body, you will get a SyntaxError.
+
+// The purpose of async/await is to simplify the syntax necessary to consume promise-based APIs.
+
+// Async functions always return a promise. If the return value of an async function is not explicitly a promise, it will be implicitly wrapped in a promise.
+
+// The await operator is used to wait for a Promise and get its fulfillment value. 
+
+// Unlike other constructs such as if or for, the try, catch, and finally blocks must be blocks, instead of single statements.
+
+
+//? Basic example from before
 
 // function fetchData(username) {
 //      fetch(`https://api.github.com/users/${username}`) // on this level we got Respond Object
@@ -42,7 +57,7 @@ async function fetchData(username) {
 
 // fetchData("anfvc");
 
-// 2. Write a function createHTML()
+// 2 STEP : Write a function createHTML()
 // accepts a fetched data from fetchData() as argument
 
 // create img, src is found in the fetched data
@@ -87,7 +102,7 @@ function createHTML(resultObj) { // we will use properties "avatar_url","name", 
 // The length read-only property of the Storage interface returns the number of data items stored in a given Storage object.
 
 
-// 3. Add an EventListener to form
+// 3 STEP : Add an EventListener to form
 // on submit, this form will handle...
 
 // form.addEventListener("submit", (e)=> {
@@ -108,7 +123,7 @@ form.addEventListener("submit", async (e)=> {
 // once submitted, make sure the input field is cleared
 // at this point, you'll see the fetched image and text in browser
 
-// Final step: save the image
+// 4 STEP: save the image
 // add a save button in createHTML()
 
 // by clicking save button, you will save the image url in localStorage
