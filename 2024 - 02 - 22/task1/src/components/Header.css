@@ -1,0 +1,20 @@
+header {
+    background: #eef;
+    padding: 2em;
+    display: flex;
+    place-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+
+    & a { margin-right: 1em; }
+
+    & #burger { display: none; }
+}
+
+@media (max-width: 500px) {
+    header {
+        & nav { display: none; }
+        & #burger { display: block; }
+    }
+}
