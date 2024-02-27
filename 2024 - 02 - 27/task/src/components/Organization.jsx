@@ -9,6 +9,7 @@ function Organization({ orgs, currentOrg, currentOrgData, setCurrentOrg }) {
       nextOrg = orgs[0];
     }
     setCurrentOrg(nextOrg);
+    setRepos([]); // refresh repos on switching to next organization
   }
   const [repos, setRepos] = useState([]);
   //      |      |            |
@@ -24,7 +25,13 @@ function Organization({ orgs, currentOrg, currentOrgData, setCurrentOrg }) {
       setRepos(result); // update "repos" array with array of objects
       //console.log(result);
     }
-    fetchRepos();
+    const schedule = setTimeout(() => {
+        fetchRepos();
+    }, 15000); // setting timeout for rendering repos
+    return ()=>{
+        clearTimeout(schedule); // cleanup function
+    }
+    
   }, [currentOrg]);
   //console.log(repos);
 
