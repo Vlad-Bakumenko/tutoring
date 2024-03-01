@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            * { box-sizing: border-box; }
+
+            body {
+                font-family: system-ui, sans-serif;
+                background: #fc8855;
+                color: #333;
+
+                height: 100dvh;
+                display: grid;
+                place-items: center;
+            }
+
+            main {
+                background: white;
+                width: 380px;
+                padding: 1em;
+            }
+
+            h1 {
+                text-align: center;
+            }
+
+            input {
+                border: none;
+                border-bottom: 1px solid black;
+                width: 100%;
+                margin-bottom: .5em;
+                padding: .5em;
+            }
+
+            select {
+                border: none;
+                border-bottom: 1px solid black;
+                outline: none;
+                margin: 8px 0;
+                padding: 5px 0;
+                width: 50%;
+            }
+
+            .flex {
+                display: flex;
+                gap: 1em;
+            }
+
+            button {
+                display: block;
+                border: 0;
+                color: #fff;
+                background-color: #333;
+                padding: 1em 4em;
+                margin: 1em auto;
+            }
+        </style>
+    </head>
+
+    <body>
+        <main>
+            <h1>Lead registration</h1>
+            <form>
+                <input type="text" name="name" placeholder="NAME" required>
+                <input type="tel" name="phone" placeholder="PHONE" required>
+                <input name="email" type="email" placeholder="EMAIL ADDRESS">
+                <input name="company_name" type="text" placeholder="COMPANY NAME">
+                <button type="submit">Submit</button>
+            </form>
+        </main>
+
+        <script>
+            const form = document.forms[0]
+            form.addEventListener("submit", e=>{
+                e.preventDefault()
+                alert("Thank you!")
+                form.reset()
+            })
+        </script>
+    </body>
+
+</html>
