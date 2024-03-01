@@ -68,11 +68,11 @@ function App() {
     setErrors(updatedErrors);
     return isValid;
   }
-
+//console.log(errors);
   // using useEffect hook so on first submit we will avoid not focusing of first incorrect input
-  useEffect(() => {
-    handleValidation();
-  }, [inputs.name, inputs.phone, inputs.email]);
+  // useEffect(() => {
+  //   handleValidation();
+  // }, [inputs.name, inputs.phone, inputs.email]);
 
   // async function for sending the data
   async function sendData() {
@@ -109,7 +109,7 @@ function App() {
         phoneRef.current.focus();
       }
       if (errors.email && !errors.name && !errors.phone) {
-        phoneRef.current.focus();
+        emailRef.current.focus();
       }
     } else {
       // call async function to send data
