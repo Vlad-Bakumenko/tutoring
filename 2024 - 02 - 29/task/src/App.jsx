@@ -128,6 +128,7 @@ function App() {
           name="name"
           placeholder="NAME"
           onChange={handleChange}
+          onBlur={handleValidation}
         />
         {errors.name && isSubmitted && <p>Please fill out this field</p>}
         <input
@@ -136,6 +137,7 @@ function App() {
           name="phone"
           placeholder="PHONE"
           onChange={handleChange}
+          onBlur={handleValidation}
         />
         {errors.phone && isSubmitted && <p>Please fill out this field</p>}
         <input
@@ -143,6 +145,7 @@ function App() {
           name="email"
           placeholder="EMAIL ADDRESS"
           onChange={handleChange}
+          onBlur={handleValidation}
         />
         {errors.email && isSubmitted && <p>Please fill out this field</p>}
         <input
