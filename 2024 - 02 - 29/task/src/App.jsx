@@ -115,6 +115,7 @@ function App() {
       // call async function to send data
       sendData();
       alert("thank you");
+      setInputs({name: "",phone: "",email: "",company_name: ""})
     }
   }
 
@@ -129,6 +130,7 @@ function App() {
           placeholder="NAME"
           onChange={handleChange}
           onBlur={handleValidation}
+          value={inputs.name}
         />
         {errors.name && isSubmitted && <p>Please fill out this field</p>}
         <input
@@ -138,6 +140,7 @@ function App() {
           placeholder="PHONE"
           onChange={handleChange}
           onBlur={handleValidation}
+          value={inputs.phone}
         />
         {errors.phone && isSubmitted && <p>Please fill out this field</p>}
         <input
@@ -146,6 +149,7 @@ function App() {
           placeholder="EMAIL ADDRESS"
           onChange={handleChange}
           onBlur={handleValidation}
+          value={inputs.email}
         />
         {errors.email && isSubmitted && <p>Please fill out this field</p>}
         <input
