@@ -1,0 +1,43 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+h1 {
+  background-color: rgb(201,248,248);
+  padding: .5rem;
+}
+
+h2 {
+  color: rgb(64, 119, 64);
+}
+
+.btn-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+span {
+  color: aqua;
+}
+
+button {
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  background-color: lightblue;
+}
+
+button:active {
+  background-color: white;
+  border: 1px solid black;
+}
+
+h3 {
+  background-color: rgb(201,248,248);
+  padding: .5rem;
+  color: lightslategray;
+}
