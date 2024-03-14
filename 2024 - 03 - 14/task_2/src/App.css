@@ -1,0 +1,38 @@
+body {
+  color: black;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.5rem;
+  min-height: 100vh;
+}
+
+div {
+  width: 100%;
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+nav a.active {
+  color: aqua;
+}
+
+h3 {
+  border: 1px solid gainsboro;
+}
+
+img {
+  width: 30px;
+}
+
+.wrapper {
+  min-height: 80vh;
+  padding-top: 3rem;
+}
