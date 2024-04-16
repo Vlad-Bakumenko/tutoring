@@ -101,7 +101,7 @@ app.delete("/users", (req,res)=>{
 
 app.delete("/users/:id", (req,res)=>{
     let newUsers = users.filter(user=> user.id != req.params.id); // return new array without the object with id specified in endpoint
-    // users = users.filter(user=> user.id != req.params.id); - alternative
+    // users = users.filter(user=> user.id != req.params.id); - alternative.
     users = [...newUsers]; // update initial "users" array with filtered array
     res.json(users);
 })
