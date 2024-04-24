@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+// To check backend directory - go to https://github.com/Vlad-Bakumenko/weather-app_v2
+
 function App() {
 
   const [input, setInput]=useState(""); // how I control user input
