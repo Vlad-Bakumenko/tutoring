@@ -1,6 +1,7 @@
 import { Schema, model } from "mongoose";
 import { roomSchema } from "./Room.js";
 
+
 const addressSchema = new Schema({
   street: { type: String },
   zip: { type: String },
@@ -12,6 +13,7 @@ const hotelSchema = new Schema(
   {
     name: { type: String, unique: true, required: true},
     //? all hotels have owners!
+    ownedBy:{type: Schema.Types.ObjectId, ref:"Owner"},
     description: { type: String, required: true, minLength: 5 },
     breakfast: { type: Boolean, default: false},
     address: addressSchema, // single-nested schema (one address for hotel)
@@ -26,5 +28,5 @@ const hotelSchema = new Schema(
   { timestamps: true, versionKey: false }
 );
 
-const Hotel = model("hotel", hotelSchema);
+const Hotel = model("Hotel", hotelSchema);
 export default Hotel;

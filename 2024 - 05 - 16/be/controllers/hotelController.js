@@ -1,11 +1,47 @@
 import Hotel from "../models/Hotel.js";
+import Owner from "../models/Owner.js";
 
 //* 1. show all the hotels
 export const showAllHotels = async (req, res, next) => {
   try {
-    const allHotels = await Hotel.find();
-    res.status(200).json(allHotels);
-    
+    const limit = 5; // how many hotels i want to send in response || render on the page
+
+    //? req.query
+    // In Express.js, req.query is an object that contains the URL query parameters. It is used to access the data sent in the URL after the ? character.
+    const {
+      page = 1,
+      breakfast,
+      rating = 0,
+      sortby = "name",
+      sortdir = "asc",
+    } = req.query;
+    // Default values specify what req.query properties should be if we are not specifying it in Query Parameters
+    const skip = (page - 1) * limit; // how many documents we want to skip based on the "page" property of req.query obj
+
+    //? where
+    // The .where() method in Mongoose is a chainable method that adds a query filter to the current query. It is used to filter the documents in the collection based on a specific condition. The .where() method takes a string argument that specifies the name of the field to filter on, and an optional second argument that specifies the value or condition to filter by.
+    // we can set default values for query parameters
+
+    //? exec()
+    // In Mongoose, the .exec() method is used to execute a Mongoose query and return a promise that resolves to the result of the query.
+
+    // When you call a Mongoose query method like find(), findOne(), update(), remove(), or any other query method, it returns a query object that is not yet executed. The query object contains the query criteria and any additional query options, but it does not actually query the database until you call the .exec() method.
+
+    const allHotels = Hotel.find()
+      .where("rating")
+      .gt(rating)
+      .sort({ [sortby]: sortdir })
+      .skip(skip)
+      .limit(limit)
+      .populate("ownedBy");
+
+    if (breakfast) {
+      allHotels.where("breakfast").equals(breakfast);
+    }
+
+    const hotels = await allHotels.exec();
+
+    res.status(200).json(hotels);
   } catch (error) {
     next(error);
   }
