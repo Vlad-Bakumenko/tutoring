@@ -14,7 +14,7 @@ export async function checkToken(req, res, next) {
       }
       const userDoc = await User.findById(payload.uid);
       req.user = userDoc; // add to request object property "user" and assign it to "userDoc"
-      console.log(payload); // { uid: '665f56288b481a281870ba4e', exp: 1717529250, iat: 1717525650 }
+      console.log(payload); // {uid: '665f56288b481a281870ba4e', exp: 1717529250, iat: 1717525650}
       next();
     });
   } catch {
